@@ -1,13 +1,7 @@
 ﻿using SnakeGame.exception;
 using SnakeGame.utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SnakeGame.entity
-{
+namespace SnakeGame.entity {
     public class Game {
         private const int GameBoardSize = 50;
         private const int GameBoardDefaultPosition = 25;

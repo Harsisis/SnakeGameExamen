@@ -1,13 +1,7 @@
 ﻿using SnakeGame.entity;
 using SnakeGame.exception;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SnakeGameTest.entity
-{
+namespace SnakeGameTest.entity {
     [TestClass]
     public class GameTest {
         public Game Game { get; set; }
