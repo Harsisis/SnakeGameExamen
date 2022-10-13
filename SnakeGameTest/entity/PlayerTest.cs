@@ -47,5 +47,19 @@ namespace SnakeGameTest.entity {
             Player.Position = 45;
             Assert.IsFalse(Player.CheckPlayerPosition(50, 25));
         }
+
+        [TestMethod]
+        public void CheckIfPlayerPositionIncrementAfterPlayingATurn() {
+            Player.Position = 20;
+            Player.PlayTurn(50, 25);
+            Assert.IsTrue(Player.Position > 20);
+        }
+
+        [TestMethod]
+        public void CheckIfPlayerPositionIsSetToDefaultAfterPlayingATurnWithPositionOverBoardSize() {
+            Player.Position = 60;
+            Player.PlayTurn(50, 25);
+            Assert.IsTrue(Player.Position == 25);
+        }
     }
 }
