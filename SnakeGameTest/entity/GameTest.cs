@@ -50,6 +50,15 @@ namespace SnakeGameTest.entity
         }
 
         [TestMethod]
+        public void AddTwoPlayersAndRemovePlayerToGamePlayerList() {
+            Game.AddPlayer(Player);
+            Game.AddPlayer(new Player("Maurice"));
+            Assert.AreEqual(2, Game.PlayerList.Count);
+            Game.RemovePlayer("Martin");
+            Assert.AreEqual(1, Game.PlayerList.Count);
+        }
+
+        [TestMethod]
         public void AddPlayerXAndRemovePlayerXToGamePlayerList() {
             Game.AddPlayer(Player);
             Assert.AreEqual(Player, Game.RemovePlayer("Martin"));
@@ -81,11 +90,21 @@ namespace SnakeGameTest.entity
         }
 
         [TestMethod]
-        public void RemovePlayerToGameBonusList() {
+        public void RemoveBonusToGameBonusList() {
             Game.AddBonusPosition(10);
             Assert.AreEqual(1, Game.BoardBonusPositionList.Count);
             Game.RemoveBonusPosition(10);
             Assert.AreEqual(0, Game.BoardBonusPositionList.Count);
+        }
+
+        [TestMethod]
+        public void AddThreeBonusAndRemoveOneBonusToGameBonusList() {
+            Game.AddBonusPosition(10);
+            Game.AddBonusPosition(20);
+            Game.AddBonusPosition(30);
+            Assert.AreEqual(3, Game.BoardBonusPositionList.Count);
+            Game.RemoveBonusPosition(10);
+            Assert.AreEqual(2, Game.BoardBonusPositionList.Count);
         }
 
         [TestMethod]

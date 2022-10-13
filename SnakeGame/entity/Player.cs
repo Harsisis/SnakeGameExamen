@@ -14,6 +14,7 @@ namespace SnakeGame.entity {
             Position = 0;
         }
 
+        // need to be private
         public int ThrowDice() {
             Random random = new Random();
             return random.Next(1, 7);
@@ -24,6 +25,7 @@ namespace SnakeGame.entity {
             return CheckPlayerPosition(boardSize, boardDefaultPosition);
         }
 
+        // need to be private
         public bool CheckPlayerPosition(int boardSize, int boardDefaultPosition) {
             if (Position == boardSize) {
                 Console.WriteLine($"{Name} reach the board limit and won the game !!!");

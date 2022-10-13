@@ -28,6 +28,7 @@ namespace SnakeGame.entity
             BoardBonusPositionList = new List<int>();
         }
 
+        // need to be private
         public bool IsPlayerListEmpty() {
             return PlayerList == null || PlayerList.Count == 0;
         }
@@ -60,10 +61,12 @@ namespace SnakeGame.entity
             throw new NonExistingBonusPositionException("Bonus Position not found in Bonus List");
         }
 
+        // need to be private
         public bool IsBonusPositionListEmpty() {
             return BoardBonusPositionList == null || BoardBonusPositionList.Count == 0;
         }
 
+        // need to be private
         private void CheckIfGameCanStart() {
             if (IsBonusPositionListEmpty() || IsPlayerListEmpty())
                 throw new GameException("Impossible to start Game, Player and/or bonusPosition are null or empty");
